@@ -36,9 +36,11 @@ While enterprise-scale big data workflows typically rely on heavy cloud infrastr
 
     Data Cleansing & Transformation:
 
-        Ratings Dataset: Stripped duplicates using distinct(), enforced strict data types (integer for IDs, numeric for ratings), and filtered anomalies.
+        Ratings Dataset: Stripped duplicates using distinct(), enforced strict data types (integer for IDs, numeric for ratings),
+ and filtered anomalies.
 
-        Genome/Tags Dataset: Cleaned and pre-aggregated using group_by(movieId) and summarise() to compute Total_Tags per movie. This critical pre-aggregation step successfully prevents explosive Cartesian products and memory overflow (OOM) during table joins.
+        Genome/Tags Dataset: Cleaned and pre-aggregated using group_by(movieId) and summarise() to compute Total_Tags per movie.
+This critical pre-aggregation step successfully prevents explosive Cartesian products and memory overflow (OOM) during table joins.
 
     Optimized Relational Join:
 
@@ -46,4 +48,5 @@ While enterprise-scale big data workflows typically rely on heavy cloud infrastr
 
     Export & Persistence:
 
-        Selected core metrics (userId, movieId, rating, Total_Tags), filtered unique rows, and exported a clean, lightweight analytical dataset (New_dataset_movielens_25M_data_joining_pipeline_data.csv).
+        Selected core metrics (userId, movieId, rating, Total_Tags), filtered unique rows, and exported a clean,
+lightweight analytical dataset (New_dataset_movielens_25M_data_joining_pipeline_data.csv).
